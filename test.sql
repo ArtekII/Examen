@@ -130,7 +130,7 @@ INSERT INTO emprunt(id_objet, id_membre, date_emprunt, date_retour) VALUES(3, 4,
 INSERT INTO emprunt(id_objet, id_membre, date_emprunt, date_retour) VALUES(14, 1, '2025-07-13', '2025-07-14');
 
 CREATE OR REPLACE view v_obj_img as
-SELECT o.id_objet, o.nom_objet, img.id_image, img.nom_image FROM objet as o join images_objet as img on o.id_objet=img.id_objet;
+SELECT o.id_objet, o.nom_objet, o.id_categorie, img.id_image, img.nom_image FROM objet as o join images_objet as img on o.id_objet=img.id_objet;
 
 INSERT INTO images_objet(id_objet, nom_image) VALUES(1, 'mirroir.jpeg');
 INSERT INTO images_objet(id_objet, nom_image) VALUES(2, 'spatule.jpeg');
@@ -175,3 +175,7 @@ INSERT INTO images_objet(id_objet, nom_image) VALUES(37, 'passoire.jpeg');
 INSERT INTO images_objet(id_objet, nom_image) VALUES(38, 'rape.jpeg');
 INSERT INTO images_objet(id_objet, nom_image) VALUES(39, 'balance de cuisine.jpeg');
 INSERT INTO images_objet(id_objet, nom_image) VALUES(40, 'tupperware.jpeg');
+
+CREATE OR REPLACE view v_emp_obj_memb as
+SELECT o.id_objet, o.nom_objet, o.id_image, o.nom_image, m.id_membre, m.nom, e.date_emprunt, e.date_retour 
+from emprunt as e join v_obj_img as o on o.id_objet=e.id_objet join membre as m on e.id_membre=m.id_membre;

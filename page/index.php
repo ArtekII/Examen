@@ -65,8 +65,8 @@
                     <div class="col">
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo htmlspecialchars($ob['nom_objet']); ?></h5>
-                                <img src="../assets/images/<?php echo $ob['nom_objet']; ?>" alt="" class="card-img-top">
+                                <a href="fiche_objet.php?id=<?php echo $ob['id_objet']; ?>"><h5 class="card-title"><?php echo htmlspecialchars($ob['nom_objet']); ?></h5>
+                                <img src="../assets/images/<?php echo $ob['nom_image']; ?>" alt="" class="card-img-top"></a>
                             </div>
                         </div>
                     </div>
