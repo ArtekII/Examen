@@ -113,4 +113,15 @@
         }
         return false;
     }
+
+    function getEmpruntByObj($id_o) {
+        $sql='SELECT * from v_emp_obj_memb where id_objet="%s"';
+        $sql=sprintf($sql, $id_o);
+        $result=mysqli_query(dbconnect(), $sql);
+        $a=[];
+        while($b=mysqli_fetch_assoc($result)){
+            $a[]=$b;
+        }
+        return $a;   
+    }
 ?>
