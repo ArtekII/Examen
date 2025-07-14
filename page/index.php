@@ -28,10 +28,24 @@
                 <p><a href="inscription.php" class="btn btn-outline-success">Créer un compte</a></p>
             </div>
         <?php } else {
+            $emprunts = getEmpruntByMembre($_SESSION['id_membre']);
             $membre = getMembreById($_SESSION['id_membre']); ?>
             <div class="text-center mb-4">
                 <h1 class="mb-3">Bienvenue, <a href="fiche.php"><?php echo htmlspecialchars($membre['nom']); ?></a></h1>
                 <img src="../assets/images/<?php echo htmlspecialchars($membre['image_profile']); ?>" alt="Profile" class="rounded-circle" width="120" height="120">
+                <div>
+                    <h4>Liste de vos emprunts :</h4>
+                    <?php foreach($emprunts as $e) { ?>
+                        <p>Objet : <strong><?php echo $e['nom_objet']; ?></strong>  - emprunte le : <?php echo $e['date_emprunt']; ?></p>
+                        <?php if($e['etat']==null) { ?>
+                            <button><a href="retourne.php?id=<?php echo $e['id_objet']; ?>">Retourner</a></button>
+                        <?php } ?>
+                    <?php } ?>
+                </div>
+            </div>
+
+            <div>
+                <button><a href="etat.php">Voir les etat d'objet retourner</a></button>
             </div>
 
             <div class="card mb-4 shadow">

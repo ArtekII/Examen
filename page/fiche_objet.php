@@ -26,6 +26,8 @@
             <div class="card shadow mb-4">
                 <div class="card-header bg-primary text-white">
                     <h2 class="mb-0">Fiche de l'objet : <?php echo htmlspecialchars($obj['nom_objet']); ?></h2>
+                    <img src="../assets/images/<?php echo $obj['nom_image']; ?>" class="img-fluid" style="width: 300px; height: 200px; object-fit: cover;" alt="...">
+
                 </div>
                 <div class="card-body">
                     <h4>Historique des emprunts :</h4>

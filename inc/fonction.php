@@ -145,4 +145,32 @@
         }
         return $a;
     }
+
+    function getEmpruntByMembre($id) {
+        $sql='SELECT * from v_emp_obj_memb where id_membre="%s"';
+        $sql=sprintf($sql, $id);
+        $result=mysqli_query(dbconnect(), $sql);
+        $a=[];
+        while($b=mysqli_fetch_assoc($result)){
+            $a[]=$b;
+        }
+        return $a;   
+    }
+
+    function insertEtatObj($etat, $id_o) {
+        $sql='UPDATE emprunt SET etat="%s" where id_objet="%s"';
+        $sql=sprintf($sql, $etat, $id_o);
+        if($result=mysqli_query(dbconnect(), $sql)) {
+            return true;
+        }
+        return false;
+    }
+
+    function nbrEtat($etat) {
+        $sql='SELECT count(*) as nbrEtat from emprunt where etat="%s"';
+        $sql=sprintf($sql, $etat);
+        $result=mysqli_query(dbconnect(), $sql);
+        $nbr=mysqli_fetch_assoc($result);
+        return $nbr;
+    }
 ?>

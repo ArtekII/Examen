@@ -177,5 +177,8 @@ INSERT INTO images_objet(id_objet, nom_image) VALUES(39, 'balance de cuisine.jpe
 INSERT INTO images_objet(id_objet, nom_image) VALUES(40, 'tupperware.jpeg');
 
 CREATE OR REPLACE view v_emp_obj_memb as
-SELECT o.id_objet, o.nom_objet, o.id_image, o.nom_image, m.id_membre, m.nom, e.date_emprunt, e.date_retour 
+SELECT o.id_objet, o.nom_objet, o.id_image, o.nom_image, m.id_membre, m.nom, e.date_emprunt, e.date_retour, e.etat 
 from emprunt as e join v_obj_img as o on o.id_objet=e.id_objet join membre as m on e.id_membre=m.id_membre;
+
+ALTER TABLE emprunt
+ADD COLUMN etat VARCHAR(255);

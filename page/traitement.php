@@ -103,4 +103,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titre']) && isset($_P
         exit;
     }
 }
+
+if(isset($_POST['id_objet']) && isset($_POST['etat'])) {
+    $id_objet=$_POST['id_objet'];
+    $etat=$_POST['etat'];
+    // echo $id_objet.' '.$etat;
+    if(insertEtatObj($etat, $id_objet)) {
+        header('Location:index.php');
+    } else {
+        header('Location:retourne.php?id='.$id_objet.'&erreur');
+    }
+}
 ?>
