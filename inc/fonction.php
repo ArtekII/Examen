@@ -135,4 +135,14 @@
         }
         return $a;
     }
+
+    function dateemprunt(){
+        $sql='SELECT (date_emprunt) FROM emprunt join membre where membre.id_membre=emprunt.id_membre';
+        $result=mysqli_query(dbconnect(), $sql);
+        $a=[];
+        while($b=mysqli_fetch_assoc($result)){
+            $a[]=$b;
+        }
+        return $a;
+    }
 ?>

@@ -76,6 +76,9 @@
                             <div class="card-body">
                                 <a href="fiche_objet.php?id=<?php echo $ob['id_objet']; ?>"><h5 class="card-title"><?php echo htmlspecialchars($ob['nom_objet']); ?></h5>
                                 <img src="../assets/images/<?php echo $ob['nom_image']; ?>" alt="" class="card-img-top"></a>
+                                <form method="post" action="emprunter.php">
+                                    <button type="submit">Emprunter</button> 
+                                </form>
                             </div>
                         </div>
                     </div>

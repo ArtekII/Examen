@@ -4,8 +4,8 @@
         static $connect = null;
     
         if ($connect === null) {
-            $connect = mysqli_connect('localhost', 'ETU004248', 'ewNTSfYm', 'db_s2_ETU004248');
-            // $connect = mysqli_connect('localhost', 'root', '', 'examen');
+            // $connect = mysqli_connect('localhost', 'ETU004248', 'ewNTSfYm', 'db_s2_ETU004248');
+            $connect = mysqli_connect('localhost', 'root', '', 'examen');
 
     
             if (!$connect) {
