@@ -53,6 +53,10 @@
                 </div>
             </div>
 
+            <div>
+                <a href="upload.php" class="btn btn-primary">Ajouter une image</a>
+            </div>
+
             <h3>Liste des objets</h3>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <?php
@@ -62,6 +66,7 @@
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo htmlspecialchars($ob['nom_objet']); ?></h5>
+                                <img src="../assets/images/<?php echo $ob['nom_objet']; ?>" alt="" class="card-img-top">
                             </div>
                         </div>
                     </div>

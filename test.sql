@@ -129,3 +129,49 @@ INSERT INTO emprunt(id_objet, id_membre, date_emprunt, date_retour) VALUES(35, 3
 INSERT INTO emprunt(id_objet, id_membre, date_emprunt, date_retour) VALUES(3, 4, '2025-07-13', '2025-07-14');
 INSERT INTO emprunt(id_objet, id_membre, date_emprunt, date_retour) VALUES(14, 1, '2025-07-13', '2025-07-14');
 
+CREATE OR REPLACE view v_obj_img as
+SELECT o.id_objet, o.nom_objet, img.id_image, img.nom_image FROM objet as o join images_objet as img on o.id_objet=img.id_objet;
+
+INSERT INTO images_objet(id_objet, nom_image) VALUES(1, 'mirroir.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(2, 'spatule.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(3, 'marteau.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(4, 'clou.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(5, 'tournevis.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(6, 'cle plate.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(7, 'cric.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(8, 'couteau.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(9, 'poel.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(10, 'casserole.jpeg');
+
+INSERT INTO images_objet(id_objet, nom_image) VALUES(11, 'pince.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(12, 'lampe.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(13, 'viseuse.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(14, 'perceuse.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(15, 'scie.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(16, 'compresseur air.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(17, 'poulies.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(18, 'planche a decouper.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(19, 'cuillere.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(20, 'spatule.jpeg');
+
+INSERT INTO images_objet(id_objet, nom_image) VALUES(21, 'brosse.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(22, 'lime a ongle.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(23, 'metre ruban.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(24, 'cutter.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(25, 'pince.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(26, 'tournevis atelier.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(27, 'pied a coulisse.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(28, 'mixeur.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(29, 'fourchette.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(30, 'fouet.jpeg');
+
+INSERT INTO images_objet(id_objet, nom_image) VALUES(31, 'cireuse.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(32, 'diffuseur.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(33, 'papier de verre.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(34, 'cle a mollette.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(35, 'lime metallique.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(36, 'cle Allen.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(37, 'passoire.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(38, 'rape.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(39, 'balance de cuisine.jpeg');
+INSERT INTO images_objet(id_objet, nom_image) VALUES(40, 'tupperware.jpeg');
