@@ -124,4 +124,15 @@
         }
         return $a;   
     }
+
+    function objetcate(){
+        $sql='SELECT (nom_objet) FROM objet join categorie_objet on objet.id_categorie=categorie_objet.id_categorie 
+        join membre on objet.id_membre=membre.id_membre';
+        $result=mysqli_query(dbconnect(), $sql);
+        $a=[];
+        while($b=mysqli_fetch_assoc($result)){
+            $a[]=$b;
+        }
+        return $a;
+    }
 ?>

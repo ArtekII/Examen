@@ -19,6 +19,8 @@
     <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="bg-light">
+    
+
     <main class="container my-5">
         <?php if (!isset($_SESSION['id_membre'])) { ?>
             <div class="text-center">
@@ -28,7 +30,7 @@
         <?php } else {
             $membre = getMembreById($_SESSION['id_membre']); ?>
             <div class="text-center mb-4">
-                <h1 class="mb-3">Bienvenue, <?php echo htmlspecialchars($membre['nom']); ?> </h1>
+                <h1 class="mb-3">Bienvenue, <a href="fiche.php"><?php echo htmlspecialchars($membre['nom']); ?></a></h1>
                 <img src="../assets/images/<?php echo htmlspecialchars($membre['image_profile']); ?>" alt="Profile" class="rounded-circle" width="120" height="120">
             </div>
 
@@ -50,6 +52,13 @@
                             <button type="submit" class="btn btn-primary">Filtrer</button>
                         </div>
                     </form>
+                    <br>
+                    <nav>
+                        <form method="post" action="recherche.php">
+                            <input placeHolder="Recherche un objet..." type="text" name="recherche" id="">
+                            <button type="submit" class="btn btn-primary">Rechercher</button>
+                        </form>
+                    </nav>
                 </div>
             </div>
 
